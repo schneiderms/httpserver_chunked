@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+<get_orders_response>
+<mid>unregistered</mid>
+<c_code>OEM 0</c_code>
+<time>151104123447</time>
+<sendall>1</sendall>
+<parameter>
+<wsc_parameter>
+<mid_new>PTP136748</mid_new>
+</wsc_parameter>
+</parameter>
+</get_orders_response>
+</soap:Body>
+</soap:Envelope>
