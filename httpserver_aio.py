@@ -2,7 +2,25 @@ from aiohttp import web
 import asyncio
 import aiofiles
 
-chunk_size = 8895
+import argparse
+
+# chunk_size = 8895
+
+def main():
+    parser = argparse.ArgumentParser(description="Example of an executable Python script with options")
+    parser.add_argument("-c", "--chunksize", type=int, help="Size of a Chunk", required=True)
+
+    args = parser.parse_args()
+
+    print(f"ChunkSize: {args.chunksize}!")
+    global chunk_size
+    chunk_size = args.chunksize
+
+    web.run_app(app, host='0.0.0.0', port=3030)
+    
+
+
+
 
 async def get_chunk_data(): 
     async with aiofiles.open('./get_orders_response_rn.xml', 'rb') as f: 
@@ -64,4 +82,4 @@ app = web.Application()
 app.add_routes([web.post('/getOrdersResponse', handle_get)])
 
 if __name__ == '__main__':
-    web.run_app(app, host='0.0.0.0', port=3030)
+    main()
